@@ -24,6 +24,15 @@ nav {
 ul {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 ul > li {
