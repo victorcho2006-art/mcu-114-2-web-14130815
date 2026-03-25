@@ -7,7 +7,7 @@ let products = [
 
 console.table(products);
 
-setProductDisplay(products[0]!, false);
+products[0]!.setDisplay(false);
 
 console.table(products);
 
