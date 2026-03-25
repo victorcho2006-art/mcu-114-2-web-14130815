@@ -1,5 +1,9 @@
-let productNg = "圖像 Angular 開發入門 第二版";
-console.log(productNg);
+let productId: number;
+productId = 1;
+console.log("Product Id = ", productId);
 
-const productCss = "金魚都能懂的 CSS 必學屬性";
-console.log(productCss);
+let productName = "圖像 Angular 開發入門 第二版";
+console.log("Product Name = ", productName);
+
+let isShow = true;
+console.log("isShow = ", isShow);
