@@ -18,4 +18,6 @@ export class App {
   protected photoUrl = 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img';
 
   protected createDate = new Date('2025/4/9');
+
+  price = 10000;
 }
