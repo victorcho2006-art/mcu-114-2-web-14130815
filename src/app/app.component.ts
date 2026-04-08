@@ -11,7 +11,14 @@ import { Product } from './model/product';
   styleUrl: './app.component.scss',
 })
 export class App {
-  protected products = [
+  protected products: Product[] = [];
+
+setEmptyData(): void {
+    this.products = [];
+  }
+
+  setHasData(): void {
+  this.products = [
     new Product({
       id: 1,
       name: '書籍 A',
@@ -63,4 +70,5 @@ export class App {
       price: 10000,
     }),
   ];
+}
 }
