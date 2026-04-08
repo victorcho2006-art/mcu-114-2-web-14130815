@@ -1,40 +1,12 @@
-<app-product-card
-  [id]="product.id"
-  [productName]="product.name"
-  [author]="product.authors"
-  [company]="product.company"
-  [(isShow)]="product.isShow"
-  [photoUrl]="product.photoUrl"
-  [createDate]="product.createDate"
-  [price]="product.price"
-></app-product-card>
-<app-product-card
-  [id]="product.id"
-  [productName]="product.name"
-  [author]="product.authors"
-  [company]="product.company"
-  [(isShow)]="product.isShow"
-  [photoUrl]="product.photoUrl"
-  [createDate]="product.createDate"
-  [price]="product.price"
-></app-product-card>
-<app-product-card
-  [id]="product.id"
-  [productName]="product.name"
-  [author]="product.authors"
-  [company]="product.company"
-  [(isShow)]="product.isShow"
-  [photoUrl]="product.photoUrl"
-  [createDate]="product.createDate"
-  [price]="product.price"
-></app-product-card>
-<app-product-card
-  [id]="product.id"
-  [productName]="product.name"
-  [author]="product.authors"
-  [company]="product.company"
-  [(isShow)]="product.isShow"
-  [photoUrl]="product.photoUrl"
-  [createDate]="product.createDate"
-  [price]="product.price"
-></app-product-card>
+@for (product of products; track $index) {
+  <app-product-card
+    [id]="product.id"
+    [productName]="product.name"
+    [author]="product.authors"
+    [company]="product.company"
+    [(isShow)]="product.isShow"
+    [photoUrl]="product.photoUrl"
+    [createDate]="product.createDate"
+    [price]="product.price"
+  ></app-product-card>
+}
