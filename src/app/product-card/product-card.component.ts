@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, numberAttribute, Output } from '@angula
   imports: [DatePipe, CurrencyPipe],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
+  host: { class: 'app-product-card' }
 })
 export class ProductCardComponent {
   @Input({ required: true, transform: numberAttribute })
