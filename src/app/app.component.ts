@@ -1,24 +1,17 @@
 import { Component } from '@angular/core';
 
-import { ProductCardComponent } from './product-card/product-card.component';
+import { HeaderComponent } from './header/header.component';
 import { ProductCardListComponent } from './product-card-list/product-card-list.component';
 import { Product } from './model/product';
 
 @Component({
   selector: 'app-root',
-  imports: [ProductCardListComponent],
+  imports: [HeaderComponent, ProductCardListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class App {
-  protected products: Product[] = [];
-
-setEmptyData(): void {
-    this.products = [];
-  }
-
-  setHasData(): void {
-  this.products = [
+  protected products: Product[] = [
     new Product({
       id: 1,
       name: '書籍 A',
@@ -71,4 +64,4 @@ setEmptyData(): void {
     }),
   ];
 }
-}
+
