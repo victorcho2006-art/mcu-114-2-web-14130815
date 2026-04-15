@@ -1,9 +1,10 @@
-<img [src]="photoUrl" />
+<img [src]="photoUrl()" />
 <div class="content">
-  <strong [class.hidden]="!isShow">{{ id }}. {{ productName }} - {{ isShow }}</strong>
-  <span>{{ createDate | date: 'yyyy-MM-dd' }}</span>
+  <strong [class.hidden]="!isShow()">{{ id() }}. {{ productName() }}</strong>
+  <span>{{ createDate() | date: 'yyyy-MM-dd' }}</span>
 </div>
-<div>@for (author of authors; track $index) {
+<div>
+  @for (author of authors(); track $index) {
     <span>{{ author }}</span>
     @if (!$last) {
       <span>、</span>
@@ -11,8 +12,8 @@
   }
 </div>
 <div class="company">
-  <span>{{ company }}</span>
-  <span>{{ price | currency : '$' : 'symbol' : '4.0' }}</span>
+  <span>{{ company() }}</span>
+  <span>{{ price() | currency : '$' : 'symbol' : '4.0' }}</span>
 </div>
 <div class="button">
   <button type="button" (click)="onSetDisplay(true)">顯示</button>
