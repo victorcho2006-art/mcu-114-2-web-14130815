@@ -13,12 +13,12 @@ import { ProductService } from '../services/product.service';
 export class ProductPageComponent implements OnInit {
 private router = inject(Router);
 
-private productService!: ProductService;
+private readonly productService = inject(ProductService);
+
 
    protected readonly products = signal<Product[]>([]);
 
    ngOnInit(): void {
-    this.productService = new ProductService();
     this.products.set(this.productService.getList());
   }
 
