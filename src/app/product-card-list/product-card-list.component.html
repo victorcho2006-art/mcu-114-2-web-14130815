@@ -8,6 +8,8 @@
     [photoUrl]="product.photoUrl"
     [createDate]="product.createDate"
     [price]="product.price"
+    (edit)="edit.emit(product)"
+    (remove)="remove.emit(product)"
     (view)="view.emit(product)"
   ></app-product-card>
 }@empty {

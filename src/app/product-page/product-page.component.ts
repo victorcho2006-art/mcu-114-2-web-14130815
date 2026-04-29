@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-
 import { Product } from '../model/product';
 import { ProductCardListComponent } from '../product-card-list/product-card-list.component';
 import { Router } from '@angular/router';
@@ -66,7 +65,11 @@ private router = inject(Router);
     }),
   ];
 
+  protected onEdit(product: Product): void {
+    this.router.navigate(['product', 'form', product.id]);
+  }
+
   protected onView(product: Product): void {
-    this.router.navigate(['product', product.id]);
+    this.router.navigate(['product','view', product.id]);
   }
 }
