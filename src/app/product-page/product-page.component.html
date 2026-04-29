@@ -1,2 +1,6 @@
-<app-product-card-list [products]="products()"(edit)="onEdit($event)" (view)="onView($event)"></app-product-card-list>
-
+<app-product-card-list [products]="products()" (view)="onView($event)" (edit)="onEdit($event)"></app-product-card-list>
+<app-pagination
+  [(pageIndex)]="pageIndex"
+  [pageSize]="pageSize()"
+  [totalCount]="totalCount()"
+></app-pagination>
