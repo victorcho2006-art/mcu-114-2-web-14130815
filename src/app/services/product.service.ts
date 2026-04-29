@@ -65,4 +65,8 @@ export class ProductService {
     return { data: data.slice(startIndex, endIndex), count: this._data.length };
   }
 
+  add(product: Readonly<Product>): void {
+    const id = this._data.length === 0 ? 1 : Math.max(...this._data.map(({ id }) => id));
+    this._data.push(new Product({ ...product, id }));
+  }
 }
