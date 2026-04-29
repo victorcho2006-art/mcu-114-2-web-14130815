@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Product } from '../model/product';
 import { ProductCardListComponent } from '../product-card-list/product-card-list.component';
 import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -9,67 +10,23 @@ import { Router } from '@angular/router';
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',
 })
-export class ProductPageComponent {
+export class ProductPageComponent implements OnInit {
 private router = inject(Router);
 
-  protected products: Product[] = [
-    new Product({
-      id: 1,
-      name: '書籍 A',
-      authors: ['作者甲', '作者乙', '作者丙'],
-      company: '博碩文化',
-      isShow: true,
-      photoUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      createDate: new Date('2025/4/9'),
-      price: 10000,
-    }),
-    new Product({
-      id: 2,
-      name: '書籍 B',
-      authors: ['作者甲', '作者乙', '作者丙'],
-      company: '博碩文化',
-      isShow: true,
-      photoUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      createDate: new Date('2025/4/9'),
-      price: 10000,
-    }),
-    new Product({
-      id: 3,
-      name: '書籍 C',
-      authors: ['作者甲', '作者乙', '作者丙'],
-      company: '博碩文化',
-      isShow: true,
-      photoUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      createDate: new Date('2025/4/9'),
-      price: 10000,
-    }),
-    new Product({
-      id: 4,
-      name: '書籍 D',
-      authors: ['作者甲', '作者乙', '作者丙'],
-      company: '博碩文化',
-      isShow: true,
-      photoUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      createDate: new Date('2025/4/9'),
-      price: 10000,
-    }),
-    new Product({
-      id: 5,
-      name: '書籍 E',
-      authors: ['作者甲', '作者乙', '作者丙'],
-      company: '博碩文化',
-      isShow: true,
-      photoUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      createDate: new Date('2025/4/9'),
-      price: 10000,
-    }),
-  ];
+private productService!: ProductService;
+
+   protected readonly products = signal<Product[]>([]);
+
+   ngOnInit(): void {
+    this.productService = new ProductService();
+    this.products.set(this.productService.getList());
+  }
 
   protected onEdit(product: Product): void {
     this.router.navigate(['product', 'form', product.id]);
   }
 
   protected onView(product: Product): void {
-    this.router.navigate(['product','view', product.id]);
+    this.router.navigate(['product', 'view', product.id]);
   }
 }
