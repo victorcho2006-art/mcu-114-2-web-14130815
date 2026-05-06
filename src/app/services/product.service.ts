@@ -57,6 +57,10 @@ export class ProductService {
       price: 10000,
     }),
   ];
+
+  getById(productId: number): Product {
+    return this._data.find(({ id }) => id === productId)!;
+  }
   
   getList(name: string | undefined, index: number, size: number): { data: Product[]; count: number } {
     const startIndex = (index - 1) * size;
