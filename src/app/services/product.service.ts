@@ -79,13 +79,16 @@ export class ProductService {
     );
   }
 
-  add(product: Readonly<Product>): void {
-    const id = this._data.length === 0 ? 1 : Math.max(...this._data.map(({ id }) => id));
-    this._data.push(new Product({ ...product, id }));
+  add(product: Readonly<Product>): Observable<Product> {
+    const id = this._data.length === 0 ? 1 : Math.max(...this._data.map(({ id }) => id)) + 1;
+    const newProduct = new Product({ ...product, id });
+    this._data.push(newProduct);
+    return of(newProduct);
   }
 
-  remove(productId: number): void {
+  remove(productId: number): Observable<Product> {
     const index = this._data.findIndex(({ id }) => id === productId);
-    this._data.splice(index, 1);
+    const [product] = this._data.splice(index, 1);
+    return of(product);
   }
 }

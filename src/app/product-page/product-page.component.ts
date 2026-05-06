@@ -43,8 +43,7 @@ private readonly productService = inject(ProductService);
       createDate: new Date('2025/4/9'),
       price: 10000,
     });
-    this.productService.add(product);
-    this.getProducts(this.pageIndex(), this.pageSize());
+    this.productService.add(product).subscribe(() => this.getProducts(this.pageIndex(), this.pageSize()));
   }
 
   protected onEdit(product: Product): void {
