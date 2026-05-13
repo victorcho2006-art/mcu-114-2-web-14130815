@@ -97,6 +97,34 @@
       "photoUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "createDate": "2023-10-17T00:00:00.000+08:00",
       "price": 1000
+    },
+    {
+      "name": "書籍 Z",
+      "company": "博碩文化",
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
+      "price": 10000,
+      "isShow": true,
+      "photoUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "createDate": "2025-04-08T16:00:00.000Z",
+      "id": "aXE8a1LJJfM"
+    },
+    {
+      "name": "書籍 Z",
+      "company": "博碩文化",
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
+      "price": 10000,
+      "isShow": true,
+      "photoUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "createDate": "2025-04-08T16:00:00.000Z",
+      "id": "Q5p_JNSpOVA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
