@@ -62,8 +62,6 @@ private readonly productService = inject(ProductService);
   }
 
   protected onRemove({ id }: Product): void {
-    this.productService.remove(id).subscribe(() => {
-      this.productService.remove(id).subscribe(() => this.pageIndex.set(1));
-    });
+    this.productService.remove(id).subscribe(() => this.pageIndex.set(1));
   }
 }
