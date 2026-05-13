@@ -67,6 +67,8 @@ export class ProductService {
   }
   
   getList(name: string | undefined, index: number, size: number): Observable<{ data: Product[]; count: number }> {
+    console.log('from product service');
+    
     return of(this._data).pipe(
       mergeMap((data) => data),
       filter((item) => (name ? item.name === name : true)),
