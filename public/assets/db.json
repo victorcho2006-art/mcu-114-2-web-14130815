@@ -83,6 +83,18 @@
       "photoUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "createDate": "2023-10-17T00:00:00.000+08:00",
       "price": 1000
+    },
+    {
+      "name": "測試",
+      "company": "翰林",
+      "authors": [
+        "A"
+      ],
+      "price": 1300,
+      "isShow": true,
+      "photoUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "createDate": "2026-05-20T09:39:38.892Z",
+      "id": "MuTvuiPmxNA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
